@@ -1,0 +1,5 @@
+# CS-Env-LOCAL-v1_0.example
+PORT=8080
+NODE_ENV=development
+JWT_SECRET=changeme-local
+DATABASE_URL=postgres://postgres:postgres@db:5432/clearsight

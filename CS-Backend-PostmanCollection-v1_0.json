@@ -1,0 +1,239 @@
+{
+  "info": {
+    "name": "ClearSight API v1.0",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Auth - Login",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/auth/login",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "auth",
+            "login"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\"username\":\"demo\"}"
+        }
+      }
+    },
+    {
+      "name": "Health",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/health",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "health"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Boards - Create",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/boards",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "boards"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\"serial_number\":\"20250810-SKU001-001\",\"sku_code\":\"SKU001\"}"
+        }
+      }
+    },
+    {
+      "name": "Boards - Get by Serial",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/boards/20250810-SKU001-001",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "boards",
+            "20250810-SKU001-001"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Stages - List",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/stages",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "stages"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Stage Events - Log",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/stage-events",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "stage-events"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\"board_serial\":\"20250810-SKU001-001\",\"stage_name\":\"QC\",\"action\":\"pass\"}"
+        }
+      }
+    },
+    {
+      "name": "SKU - List",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/sku",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "sku"
+          ]
+        }
+      }
+    },
+    {
+      "name": "SKU - Add",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/sku",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "sku"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\"sku_code\":\"SKU001\",\"description\":\"Demo SKU\",\"erp_reference\":\"ERP123\"}"
+        }
+      }
+    },
+    {
+      "name": "ERP Sync - Trigger",
+      "request": {
+        "method": "POST",
+        "url": {
+          "raw": "{{baseUrl}}/erp-sync",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "erp-sync"
+          ]
+        }
+      }
+    },
+    {
+      "name": "ERP Sync - Logs",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/erp-sync/logs",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "erp-sync",
+            "logs"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Dashboard - WIP",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/dashboard/wip",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "dashboard",
+            "wip"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Dashboard - Rework Stats",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/dashboard/rework-stats",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "dashboard",
+            "rework-stats"
+          ]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+# CS-Compose-LOCAL-v1_0.yml
+version: "3.9"
+services:
+  db:
+    image: postgres:16
+    container_name: clearsight_db
+    environment:
+      POSTGRES_DB: clearsight
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - dbdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  api:
+    build:
+      context: ../backend
+    container_name: clearsight_api
+    environment:
+      NODE_ENV: development
+      PORT: 8080
+      JWT_SECRET: changeme-local
+      DATABASE_URL: postgres://postgres:postgres@db:5432/clearsight
+    ports:
+      - "8080:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - ../backend/src:/app/src:rw
+
+volumes:
+  dbdata:

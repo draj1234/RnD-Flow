@@ -1,0 +1,182 @@
+﻿{
+    "base_url":  "http://192.168.1.13:11434",
+    "timestamp":  "2025-08-10T22:16:08",
+    "tests":  [
+                  {
+                      "type":  "equals",
+                      "name":  "math_simple",
+                      "prompt":  "What is 37*23? Provide only the number.",
+                      "expect":  [
+                                     "851"
+                                 ]
+                  },
+                  {
+                      "type":  "contains",
+                      "name":  "routes_from_list",
+                      "prompt":  "From this list of files: CS-Backend-Service-v1_0/src/routes/auth.js, boards.js, stages.js, stageEvents.js, sku.js, erpSync.js, dashboard.js; enumerate backend API route names that likely exist. Return a comma-separated list in lowercase.",
+                      "expect":  [
+                                     "auth",
+                                     "boards",
+                                     "stages",
+                                     "stageevents",
+                                     "sku",
+                                     "erpsync",
+                                     "dashboard"
+                                 ]
+                  },
+                  {
+                      "type":  "contains",
+                      "name":  "ac_list",
+                      "prompt":  "Given acceptance criteria: AC-001 role-based auth, AC-002 scan ingestion, AC-003 board details, AC-004 ERP sync; list them as AC-001..AC-004.",
+                      "expect":  [
+                                     "AC-001",
+                                     "AC-002",
+                                     "AC-003",
+                                     "AC-004"
+                                 ]
+                  },
+                  {
+                      "type":  "contains",
+                      "name":  "schema_entities",
+                      "prompt":  "From the ClearSight domain, list likely database table names for entities: boards, stations, scans, users, roles. Return a comma-separated lowercase list.",
+                      "expect":  [
+                                     "boards",
+                                     "stations",
+                                     "scans",
+                                     "users",
+                                     "roles"
+                                 ]
+                  },
+                  {
+                      "type":  "contains",
+                      "name":  "rbac_roles",
+                      "prompt":  "In this system, name three user roles with increasing privilege relevant to manufacturing traceability.",
+                      "expect":  [
+                                     "operator",
+                                     "floor manager",
+                                     "admin"
+                                 ]
+                  },
+                  {
+                      "type":  "contains",
+                      "name":  "endpoints_inference",
+                      "prompt":  "Infer likely REST endpoint base paths for the backend given files auth.js, boards.js, scans, dashboard.js. Return a comma-separated list of base paths (e.g., /auth, /boards, /scans, /dashboard).",
+                      "expect":  [
+                                     "/auth",
+                                     "/boards",
+                                     "/scans",
+                                     "/dashboard"
+                                 ]
+                  },
+                  {
+                      "type":  "contains",
+                      "name":  "erp_idempotency",
+                      "prompt":  "For ERP sync operations, list three reliability mechanisms we should implement.",
+                      "expect":  [
+                                     "idempotency",
+                                     "retry",
+                                     "backoff"
+                                 ]
+                  },
+                  {
+                      "type":  "contains",
+                      "name":  "device_config",
+                      "prompt":  "Name two device configuration areas the frontend must handle for factory stations.",
+                      "expect":  [
+                                     "scanner",
+                                     "printer"
+                                 ]
+                  },
+                  {
+                      "type":  "contains",
+                      "name":  "compose_services",
+                      "prompt":  "Name two core services likely to appear in a Docker stack for this app (reverse proxy and database).",
+                      "expect":  [
+                                     "nginx",
+                                     "postgres"
+                                 ]
+                  },
+                  {
+                      "type":  "contains",
+                      "name":  "perf_budget",
+                      "prompt":  "Name two performance budget concepts we might track for UI and API latency.",
+                      "expect":  [
+                                     "p95",
+                                     "latency"
+                                 ]
+                  }
+              ],
+    "results":  [
+                    {
+                        "model":  "llama3.2-vision:latest",
+                        "reliability":  1,
+                        "accuracy":  0.738095238095238,
+                        "avg_ms":  2303,
+                        "score":  0.8036
+                    },
+                    {
+                        "model":  "qwen3-coder:30b",
+                        "reliability":  1,
+                        "accuracy":  0.75476190476190486,
+                        "avg_ms":  4842,
+                        "score":  0.7661
+                    },
+                    {
+                        "model":  "llama3:latest",
+                        "reliability":  1,
+                        "accuracy":  0.72142857142857142,
+                        "avg_ms":  3204,
+                        "score":  0.7411
+                    },
+                    {
+                        "model":  "gpt-oss:20b",
+                        "reliability":  1,
+                        "accuracy":  0.68333333333333335,
+                        "avg_ms":  7590,
+                        "score":  0.7125
+                    },
+                    {
+                        "model":  "llama3.1:latest",
+                        "reliability":  1,
+                        "accuracy":  0.66904761904761911,
+                        "avg_ms":  2689,
+                        "score":  0.7018
+                    },
+                    {
+                        "model":  "gemma2:2b",
+                        "reliability":  1,
+                        "accuracy":  0.6,
+                        "avg_ms":  1725,
+                        "score":  0.7
+                    },
+                    {
+                        "model":  "glm4:latest",
+                        "reliability":  1,
+                        "accuracy":  0.55,
+                        "avg_ms":  2860,
+                        "score":  0.6125
+                    },
+                    {
+                        "model":  "qwen3:30b",
+                        "reliability":  0.8,
+                        "accuracy":  0.56666666666666665,
+                        "avg_ms":  34287,
+                        "score":  0.585
+                    },
+                    {
+                        "model":  "gemma3:27b",
+                        "reliability":  0.5,
+                        "accuracy":  0.5,
+                        "avg_ms":  5771,
+                        "score":  0.475
+                    },
+                    {
+                        "model":  "alibayram/hunyuan:7b",
+                        "reliability":  0,
+                        "accuracy":  0,
+                        "avg_ms":  null,
+                        "score":  0
+                    }
+                ],
+    "recommended":  "llama3.2-vision:latest"
+}

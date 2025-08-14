@@ -1,0 +1,56 @@
+ClearSight Consolidated Package (v1.0)
+Generated: 20250810_0939
+
+FOUND FILES:
+01-ProductOwner/CS-Brief-ScopeAndPriorities-v1_0.md
+01-ProductOwner/CS-Brief-AcceptanceCriteria-v1_0.md
+02-BusinessAnalyst/CS-FRD-FunctionalRequirements-v1_0.md
+02-BusinessAnalyst/CS-NFR-NonFunctional-v1_0.md
+02-BusinessAnalyst/CS-UseCases-FlowDiagram-v1_0.drawio
+03-SolutionsArchitect/CS-SAD-SystemArchitecture-v1_0.md
+03-SolutionsArchitect/CS-DBDDL-PostgresSchema-v1_0.sql
+03-SolutionsArchitect/CS-API-Specification-v1_0.md
+04-BackendDev/CS-Backend-Service-v1_0.zip
+04-BackendDev/CS-Backend-PostmanCollection-v1_0.json
+04-BackendDev/CS-Backend-DeploymentGuide-v1_0.md
+05-FrontendDev/CS-UI-StyleGuide-v1_0.md
+05-FrontendDev/CS-Frontend-AppScaffold-v1_0.zip
+05-FrontendDev/CS-Frontend-IntegrationTests-v1_0.md
+05-FrontendDev/CS-Frontend-ScannerPrinterConfig-v1_0.md
+06-QA/CS-QA-TestCases-v1_0.md
+06-QA/CS-QA-TestExecutionReportTemplate-v1_0.md
+06-QA/CS-QA-BugReportTemplate-v1_0.md
+06-QA/CS-QATestPlan-v1_0.md
+07-DevOps/CS-Compose-DockerStack-v1_0.yml
+07-DevOps/CS-Nginx-Config-v1_0.conf
+07-DevOps/CS-Backup-RetentionPolicy-v1_0.md
+07-DevOps/CS-Monitoring-Setup-v1_0.md
+08-TrainingDocs/CS-UserManual-v1_0.md
+08-TrainingDocs/CS-QuickStartGuide-v1_0.pdf
+08-TrainingDocs/CS-TrainingSlides-v1_0.pptx
+08-TrainingDocs/CS-UI-Wireframe-Dashboard-v1_0.png
+08-TrainingDocs/CS-UI-Wireframe-BoardDetails-v1_0.png
+08-TrainingDocs/CS-UI-Wireframes-v1_0.zip
+09-Support/CS-SupportRunbook-v1_0.md
+10-DeploymentLocal/CS-Deploy-LocalWin11-Guide-v1_0.md
+10-DeploymentLocal/CS-Compose-LOCAL-v1_0.yml
+10-DeploymentLocal/CS-Env-LOCAL-v1_0.example
+10-DeploymentLocal/CS-Deploy-SmokeChecklist-v1_0.md
+10-DeploymentLocal/Start-LocalClearSight.ps1
+11-ProgramMgmt/CS-GoLive-Readiness-Checklist-v1_0.md
+99-Maps/CS-Persona-FileMap-v1_0.md
+99-Maps/CS-Persona-FileMap-v1_1.md
+99-Maps/CS-Persona-FileMap-v1_2.md
+99-Maps/CS-Persona-FileMap-v1_3.md
+99-Maps/CS-Persona-FileMap-v1_4.md
+99-Maps/CS-Persona-FileMap-v1_5.md
+99-Maps/CS-Persona-FileMap-v1_6.md
+99-Maps/CS-Persona-FileMap-v1_7.md
+99-Maps/CS-Persona-FileMap-v1_8.md
+99-Maps/CS-Persona-FileMap-v1_9.md
+00-RepoSkeleton/ClearSight_Repo_Skeleton_v1_0.zip
+
+MISSING (not included because not found in your workspace):
+00-RepoSkeleton/ClearSight_Persona_Workflow_Files_v0_1.md
+
+NOTE: You can paste a `dir /b` listing later; I will reconcile and repack if anything's off.
