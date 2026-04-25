@@ -1,0 +1,80 @@
+# Smart Datasheet Collector & Organizer (SDCO) Configuration
+
+# LLM Settings
+llm:
+  provider: "ollama"  # Options: "ollama", "openrouter"
+  model: "llama3.1:8b"  # Ollama model
+  openrouter_api_key: ""  # Set via environment variable OPENROUTER_API_KEY
+  openrouter_model: "meta-llama/llama-3.1-8b-instruct"
+  timeout: 120  # seconds
+  temperature: 0.1  # Lower for more deterministic classification
+
+# Download Settings
+download:
+  max_concurrent: 5  # Parallel downloads
+  timeout: 30  # seconds per request
+  retries: 3
+  retry_delay: 2  # seconds (base for exponential backoff)
+  user_agents:
+    - "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+    - "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+    - "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+
+# Output Settings
+output:
+  base_directory: "./datasheets"
+  manifest_file: "manifest.json"
+  log_file: "download_log.txt"
+  failed_file: "missing_datasheets.csv"
+  
+# Category Mapping (for LLM classification)
+categories:
+  - name: "Power"
+    keywords: ["LDO", "regulator", "battery", "charger", "PMIC", "DC-DC", "converter", "voltage", "current"]
+  - name: "MCU_Processor"
+    keywords: ["microcontroller", "MCU", "processor", "MPU", "DSP", "ARM", "CPU", "FPGA"]
+  - name: "Memory"
+    keywords: ["flash", "EEPROM", "RAM", "DRAM", "SRAM", "NVRAM", "memory"]
+  - name: "Sensors"
+    keywords: ["sensor", "accelerometer", "gyroscope", "temperature", "humidity", "pressure", "IMU"]
+  - name: "Wireless_Comms"
+    keywords: ["UWB", "BLE", "Bluetooth", "WiFi", "LoRa", "NFC", "RF", "wireless", "module", "transceiver"]
+  - name: "Passives"
+    keywords: ["resistor", "capacitor", "inductor", "bead", "ferrite", "crystal", "passive"]
+  - name: "Connectors"
+    keywords: ["connector", "USB", "header", "socket", "pogo", "pin", "jack", "port"]
+  - name: "Protection"
+    keywords: ["TVS", "fuse", "ESD", "protection", "varistor", "diode", "suppressor"]
+  - name: "Clock_Timing"
+    keywords: ["crystal", "oscillator", "resonator", "clock", "timing", "RTC"]
+  - name: "Interface"
+    keywords: ["level shifter", "transceiver", "buffer", "driver", "isolator", "interface"]
+  - name: "Mechanical"
+    keywords: ["enclosure", "mount", "hardware", "mechanical", "case", "housing"]
+  - name: "Reference_Docs"
+    keywords: ["application note", "design guide", "reference manual", "standard", "tutorial"]
+
+# Search Sources Priority
+sources:
+  priority:
+    - "manufacturer"
+    - "digikey"
+    - "mouser"
+    - "octopart"
+    - "google"
+    - "alldatasheet"
+  
+# API Keys (set via environment variables when possible)
+api_keys:
+  digikey_client_id: ""  # DIGIKEY_CLIENT_ID
+  digikey_client_secret: ""  # DIGIKEY_CLIENT_SECRET
+  mouser_api_key: ""  # MOUSER_API_KEY
+  octopart_api_key: ""  # OCTOPART_API_KEY
+
+# Advanced Settings
+advanced:
+  enable_git_integration: false
+  enable_duplicate_detection: true
+  enable_update_checker: false
+  pdf_metadata_extraction: true
+  generate_thumbnails: false
